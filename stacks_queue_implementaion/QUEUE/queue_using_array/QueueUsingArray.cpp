@@ -45,7 +45,7 @@ void QueueUsingArray::pop(){
 int QueueUsingArray::front(){
     if(empty()){
         std::cout<<"queue is empty"<<std::endl;
-        return INT_MAX;
+        return INT_MIN;
     }
     return data[first_idx];
 }

@@ -9,16 +9,27 @@ QueueUsingLL::QueueUsingLL(){
     sz = 0;
 }
 
+QueueUsingLL::~QueueUsingLL()
+{
+    while (head != nullptr) {
+        Node* tmp = head;
+        head = head->next;
+        delete tmp;
+    }
+    tail = nullptr;  // Clear tail to avoid dangling pointer
+}
+
 
 void QueueUsingLL::push(int data){
     Node* new_node = new Node(data);
-    if(head == nullptr) head = tail = new_node;
+    if(head == nullptr) {head =new_node; tail = new_node;}
     else {
         tail->next = new_node;
         tail = tail->next;
     }
     
     sz++;
+    std::cout << "Pushed: " << data << ", Size: " << sz << std::endl;
 }
 
 
@@ -27,9 +38,10 @@ void QueueUsingLL::pop(){
         std::cout<<"queue is empty"<<std::endl;
         return;
     }
-    auto tmp = head->next;
-    delete head;
-    head =tmp;
+    auto tmp = head;
+    head = head->next;
+    delete tmp;
+    if(head ==nullptr) tail = nullptr;
     sz--;
 }
 

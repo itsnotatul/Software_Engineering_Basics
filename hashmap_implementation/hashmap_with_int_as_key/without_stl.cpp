@@ -78,8 +78,8 @@ private:
 
     void rehash(){
         int oldBucketsCount = numOfBuckets;
-
         auto oldBuckets = buckets;
+        
         buckets = new mapnode*[2*numOfBuckets];
         for(int i=0;i<2*numOfBuckets;i++) buckets[i]= nullptr;
 
