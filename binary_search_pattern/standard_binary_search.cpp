@@ -12,7 +12,10 @@ int fun(vector<int>& arr){
 }
 
 // bianry search with dupes, leftmost insertion point
-
+/*
+ 1 2 2 3 4
+ suppose need to find the leftmost 2, then it makes sens to have a equal sign in this pattern
+ */
 int fun(vector<int>& arr){
 	int left =0,right = arr.size(); // if target doesn't exist and need to insert at the end. do dry run for better understanding
 
