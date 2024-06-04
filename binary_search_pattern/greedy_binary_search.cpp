@@ -27,8 +27,8 @@ int fun(){
 //example: allocate pages:
 int check(int pages[], int n, int k, int page_limit){
     int cnt =1;
-    int curr = 0;
-    for(int i=0;i<n;i++){
+    int curr = pages[0];
+    for(int i=1;i<n;i++){
         if(curr + pages[i] <= page_limit){
             curr += pages[i];
         }
