@@ -8,7 +8,7 @@ int fun(vector<int>& arr){
 		if(arr[mid] > target) right = mid-1;
 		else left = mid+1;
 	}
-	return left; // left is the insertion point
+	return left; // left is the insertion point, if the target doesn't exist
 }
 
 // bianry search with dupes, leftmost insertion point
